@@ -1,0 +1,4 @@
+
+
+
+ipconfig getifaddr en0

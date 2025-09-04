@@ -1,0 +1,52 @@
+/* src/styles/globals.css */
+
+/* Tailwind base, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #1C6EA4;         /* Primary color */
+  --color-primary-dark: #155085;    /* Dark variant for hover */
+  --color-background: #0B1D51;      /* Site-wide background */
+  --color-card-light: #13275F;      /* Slightly lighter card background */
+  --color-card-dark: #0A173F;       /* Dark variant for hover/dark cards */
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #9F6F97, #898288, #937B8F);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-primary-dark {
+  background-color: var(--color-primary-dark);
+}
+
+.bg-card-light {
+  background-color: var(--color-card-light);
+}
+
+.bg-card-dark {
+  background-color: var(--color-card-dark);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.dark .text-primary {
+  color: var(--color-primary);
+}

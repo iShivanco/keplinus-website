@@ -1,10 +1,35 @@
 // src/pages/blog.tsx
 "use client";
 
+import Head from "next/head";
 import { motion } from "framer-motion";
 
 export default function Blog() {
   return (
+        <>
+      {/* ===== SEO HEAD ===== */}
+      <Head>
+        <title>Keplinus Blog – Web Development & AI Insights</title>
+        <meta
+          name="description"
+          content="Explore the Keplinus Blog for insights on modern web development, AI-powered solutions, and scalable technology for businesses and developers."
+        />
+        <link rel="canonical" href="https://keplinus.vercel.app/blog" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Keplinus Blog – Web Development & AI Insights" />
+        <meta property="og:description" content="Stay updated with Keplinus’ latest articles on AI, web development, and technology innovations for scalable platforms." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://keplinus.vercel.app/blog" />
+        <meta property="og:image" content="https://keplinus.vercel.app/logo-og.png" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Keplinus Blog – Web Development & AI Insights" />
+        <meta name="twitter:description" content="Explore articles and insights from Keplinus on AI, modern web development, and scalable technology solutions." />
+        <meta name="twitter:image" content="https://keplinus.vercel.app/logo-og.png" />
+      </Head>
+
     <section className="min-h-[90vh] py-20 bg-gradient-to-b from-gray-900 to-black text-white px-6 lg:px-12">
       <div className="max-w-5xl mx-auto space-y-12">
         <motion.h1
@@ -94,5 +119,6 @@ export default function Blog() {
         </motion.div>
       </div>
     </section>
+    </>
   );
 }

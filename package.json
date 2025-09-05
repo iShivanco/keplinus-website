@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start -p 3000",
     "server": "node server.js",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.1.1",
@@ -15,9 +16,11 @@
     "@react-three/fiber": "^8.13.2",
     "autoprefixer": "^10.4.14",
     "axios": "^1.5.0",
+    "canvas": "^3.2.0",
     "framer-motion": "^10.18.0",
     "lucide-react": "^0.542.0",
     "next": "13.4.10",
+    "next-sitemap": "^4.2.3",
     "next-themes": "^0.2.1",
     "postcss": "^8.4.21",
     "react": "18.2.0",

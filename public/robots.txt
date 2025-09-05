@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://keplinus.vercel.app
+
+# Sitemaps
+Sitemap: https://keplinus.vercel.app/sitemap.xml

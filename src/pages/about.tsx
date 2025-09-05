@@ -1,6 +1,7 @@
 // src/pages/about.tsx
 "use client";
 
+import Head from "next/head";
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -108,7 +109,31 @@ export default function About() {
     setTestiIndex((i) => (i - 1 + testimonials.length) % testimonials.length);
   }
 
-  return (
+ return (
+    <>
+      {/* ===== SEO HEAD ===== */}
+      <Head>
+        <title>About Keplinus – AI Agents & Professional Websites</title>
+        <meta
+          name="description"
+          content="Learn about Keplinus, our story, mission, core values, and talented team building AI agents and professional websites worldwide."
+        />
+        <link rel="canonical" href="https://keplinus.vercel.app/about" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="About Keplinus – AI Agents & Professional Websites" />
+        <meta property="og:description" content="Discover Keplinus’ story, mission, values, and team behind intelligent AI solutions and premium websites." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://keplinus.vercel.app/about" />
+        <meta property="og:image" content="https://keplinus.vercel.app/logo-og.png" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Keplinus – AI Agents & Professional Websites" />
+        <meta name="twitter:description" content="Learn about the Keplinus team, mission, and values behind intelligent AI agents and professional websites." />
+        <meta name="twitter:image" content="https://keplinus.vercel.app/logo-og.png" />
+      </Head>
+
     <section className="py-24 bg-gradient-to-b from-purple-100/50 to-purple-100/90 dark:from-slate-900 dark:to-slate-950">
       <div className="container mx-auto px-6 lg:px-12">
         {/* HERO */}
@@ -442,5 +467,6 @@ export default function About() {
         </motion.section>
       </div>
     </section>
+    </>
   );
 }

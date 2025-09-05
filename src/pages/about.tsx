@@ -2,17 +2,14 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
-import {
-  CheckCircle,
-  Users,
-  Globe,
-  Award,
-} from "lucide-react";
+import { CheckCircle, Users, Globe, Award } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 type TeamMember = {
   name: string;
+  slug: string; // 🔥 added slug field
   role: string;
   bio: string;
   photo: string;
@@ -21,24 +18,27 @@ type TeamMember = {
 
 const TEAM: TeamMember[] = [
   {
-    name: "Aarav Patel",
-    role: "Co-Founder & CTO",
+    name: "Shivanshu Dixit",
+    slug: "shivanshu-dixit",
+    role: "Founder & CTO",
     bio: "Systems architect focused on scalable web platforms, AI pipelines, and observability.",
-    photo: "/images/team_aarav.jpg",
+    photo: "/images/shivanshu_profile.jpg",
     linkedin: "#",
   },
   {
-    name: "Rhea Kapoor",
+    name: "Rohan Rai",
+    slug: "rohan-rai",
     role: "Head of Product",
     bio: "Design-led product leader who turns research into delightful, usable products.",
-    photo: "/images/team_rhea.jpg",
+    photo: "/images/rohan_profile.jpg",
     linkedin: "#",
   },
   {
-    name: "Samir Das",
+    name: "Advika",
+    slug: "advika",
     role: "Lead ML Engineer",
     bio: "Builds robust, auditable agentic systems and production ML infrastructure.",
-    photo: "/images/team_samir.jpg",
+    photo: "/images/advika_profile.jpg",
     linkedin: "#",
   },
 ];
@@ -127,8 +127,8 @@ export default function About() {
           </h1>
           <p className="mt-6 text-lg md:text-xl text-slate-600 dark:text-slate-300">
             We blend AI, engineering, and design to build products that scale.
-            Trusted by startups and enterprises, our focus is measurable impact —
-            not just beautiful interfaces.
+            Trusted by startups and enterprises, our focus is measurable impact
+            — not just beautiful interfaces.
           </p>
 
           <div className="mt-8 flex items-center justify-center gap-4">
@@ -167,10 +167,10 @@ export default function About() {
               variants={fadeUp}
               className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed"
             >
-              Keplinus started with a simple idea: build technology that empowers people
-              and teams instead of adding noise. Our founders — product designers and
-              engineers — teamed up to ship first-class web experiences and AI systems that
-              solve real business problems.
+              Keplinus started with a simple idea: build technology that
+              empowers people and teams instead of adding noise. Our founders —
+              product designers and engineers — teamed up to ship first-class
+              web experiences and AI systems that solve real business problems.
             </motion.p>
 
             <motion.p
@@ -180,9 +180,9 @@ export default function About() {
               Today we focus on three pillars:{" "}
               <span className="font-semibold text-purple-400">trust</span>,{" "}
               <span className="font-semibold">clarity</span>, and{" "}
-              <span className="font-semibold">reliability</span>. We combine research-driven
-              design with disciplined engineering and responsible AI practices to help clients
-              scale with confidence.
+              <span className="font-semibold">reliability</span>. We combine
+              research-driven design with disciplined engineering and
+              responsible AI practices to help clients scale with confidence.
             </motion.p>
 
             <motion.ul
@@ -201,7 +201,9 @@ export default function About() {
                   className="flex items-start gap-3"
                 >
                   <CheckCircle className="w-6 h-6 text-purple-500 mt-1" />
-                  <span className="text-slate-700 dark:text-slate-300">{item}</span>
+                  <span className="text-slate-700 dark:text-slate-300">
+                    {item}
+                  </span>
                 </motion.li>
               ))}
             </motion.ul>
@@ -225,8 +227,7 @@ export default function About() {
             </div>
             <div className="p-6 md:p-8">
               <p className="text-sm text-slate-700 dark:text-slate-300">
-                Professional abstract 3D gradient render or product mockup can live here —
-                showcase a realistic mockup of your AI + website solutions.
+                 "Just because something doesn’t do what you planned it to do doesn’t mean it’s useless."
               </p>
             </div>
           </motion.div>
@@ -251,7 +252,9 @@ export default function About() {
                 className="p-6 rounded-2xl bg-white/80 dark:bg-slate-800/40 border border-slate-200/60 dark:border-slate-700/60 shadow-sm"
               >
                 <p className="text-purple-500 font-bold text-lg">{t.year}</p>
-                <p className="mt-3 text-slate-700 dark:text-slate-300">{t.text}</p>
+                <p className="mt-3 text-slate-700 dark:text-slate-300">
+                  {t.text}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -306,22 +309,29 @@ export default function About() {
                 className="relative rounded-2xl overflow-hidden bg-white/80 dark:bg-slate-800/40 border border-slate-200/60 dark:border-slate-700/60 shadow-sm"
               >
                 <div className="relative h-44 w-full">
-                  <Image src={m.photo} alt={m.name} fill className="object-cover" />
+                  <Image
+                    src={m.photo}
+                    alt={m.name}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div className="p-5">
                   <p className="font-semibold text-slate-900 dark:text-white">
                     {m.name}
                   </p>
                   <p className="text-sm text-purple-500 mb-2">{m.role}</p>
-                  <p className="text-sm text-slate-600 dark:text-slate-300">{m.bio}</p>
+                  <p className="text-sm text-slate-600 dark:text-slate-300">
+                    {m.bio}
+                  </p>
                   <div className="mt-4">
-                    <a
-                      href={m.linkedin ?? "#"}
+                    <Link
+                      href={`/team/${m.slug}`}
                       className="text-sm text-slate-700 dark:text-slate-300 hover:text-purple-500 transition"
-                      aria-label={`LinkedIn ${m.name}`}
+                      aria-label={`Profile of ${m.name}`}
                     >
                       View profile
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </motion.div>
@@ -347,7 +357,9 @@ export default function About() {
                 <p className="text-4xl md:text-5xl font-extrabold text-purple-500">
                   {s.num}
                 </p>
-                <p className="mt-2 text-slate-600 dark:text-slate-300">{s.label}</p>
+                <p className="mt-2 text-slate-600 dark:text-slate-300">
+                  {s.label}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -414,8 +426,9 @@ export default function About() {
               Building the future, together
             </h4>
             <p className="text-white/90 mt-3 max-w-2xl mx-auto">
-              Whether you’re launching a new product or scaling an existing platform,
-              Keplinus is your partner for reliable, thoughtful engineering.
+              Whether you’re launching a new product or scaling an existing
+              platform, Keplinus is your partner for reliable, thoughtful
+              engineering.
             </p>
             <div className="mt-6">
               <a

@@ -1,0 +1,6 @@
+<!-- save as public/logo-monochrome.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 96" role="img" aria-label="Keplinus logo (monochrome)">
+  <rect x="8" y="8" width="80" height="80" rx="18" fill="#111"/>
+  <text x="48" y="64" text-anchor="middle" font-family="Poppins, Inter, system-ui" font-weight="700" font-size="52" fill="#ffffff" dominant-baseline="middle">K</text>
+  <text x="110" y="62" font-family="Poppins, Inter, system-ui" font-weight="700" font-size="36" fill="#111">Keplinus</text>
+</svg>

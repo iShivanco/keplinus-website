@@ -35,7 +35,7 @@ const SERVICES: Service[] = [
     icon: <Code className="w-5 h-5" />,
     title: "Web Development",
     blurb:
-      "High-performance web apps and marketing sites engineered for speed, accessibility, and conversion. Built with modern stacks and clean architecture.",
+      "High-performance web apps and marketing sites engineered for speed, accessibility, and conversion. built with modern stacks and clean architecture.",
     image: "/images/about_banner_coding.jpg",
     features: [
       "Next.js + TypeScript foundations",

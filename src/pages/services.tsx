@@ -274,12 +274,15 @@ export default function Services() {
                       initial={{ scale: 1.05 }}
                       animate={{ scale: 1 }}
                       transition={{ duration: 1 }}
-                      className="h-full w-full"
+                      className="relative h-full w-full"
                     >
                       <Image
                         src={service.image}
                         alt={service.title}
                         fill
+                        priority={service.title === "Web Development"} // force eager load
+                        quality={80} // compress for Chrome rendering
+                        unoptimized // bypass Next.js optimization (tests raw JPEG)
                         className="object-cover"
                         sizes="(min-width: 1024px) 720px, 100vw"
                       />
